@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Animated Portfolio Menu</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-wrapper">
+      <span class="brand">My Portfolio</span>
+      <div class="menu-button">
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MENU -->
+  <div class="menu-container">
+    <div class="overlay"></div>
+    <ul>
+      <li><a href="#welcome-section">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="social">
+      <a href="#">Twitter</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">GitHub</a>
+    </div>
+  </div>
+
+  <!-- SECTIONS -->
+  <header id="welcome-section">
+    <div class="container">
+      <h1>
+        <span class="line">Hi, I'm <span class="color">Your Name</span></span>
+        <span class="line">Web Developer</span>
+      </h1>
+      <div class="buttons">
+        <a href="#projects" class="cta">My Work</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="forest"></div>
+    <div class="silhouette"></div>
+    <div class="moon"></div>
+  </header>
+
+  <section id="about">
+    <div class="wrapper">
+      <article>
+        <div class="title">
+          <h3>About Me</h3>
+          <div class="separator"></div>
+          <p class="subtitle">A little introduction</p>
+        </div>
+        <div class="desc full">
+          <p>I am a passionate developer who enjoys creating interactive and visually stunning websites.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="projects-container">
+      <div class="heading">
+        <h3 class="title">My Projects</h3>
+        <div class="separator"></div>
+        <p class="subtitle">Here are a few projects I've worked on.</p>
+      </div>
+      <div class="project">
+        <a href="#" class="project-link">
+          <img src="https://via.placeholder.com/200" alt="Project Image" class="project-image">
+        </a>
+        <div class="project-details">
+          <p class="project-tile">Project Name</p>
+          <p>Short description of the project.</p>
+          <div class="buttons">
+            <a href="#">View <i class="fas fa-external-link-alt"></i></a>
+            <a href="#">Code <i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="heading-wrapper">
+        <div class="heading">
+          <h3 class="title">Get in Touch</h3>
+          <div class="separator"></div>
+          <p class="subtitle">Feel free to reach out for collaboration or just a friendly hello 👋</p>
+        </div>
+        <div class="social">
+          <a href="#">LinkedIn</a>
+          <a href="#">Twitter</a>
+        </div>
+      </div>
+      <form id="contact-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="4" placeholder="Your Message" required></textarea>
+        <input type="submit" value="Send Message">
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrapper">
+      <h3>© 2025 Your Name</h3>
+      <p>Thanks for visiting!</p>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    const menuBtn = document.querySelector('.menu-button');
+    const menu = document.querySelector('.menu-container');
+    const overlay = document.querySelector('.menu-container .overlay');
+
+    menuBtn.addEventListener('click', () => {
+      menuBtn.classList.toggle('active');
+      menu.classList.toggle('active');
+
+      if (!menu.classList.contains('active')) {
+        menu.classList.add('deactive');
+        setTimeout(() => {
+          menu.classList.remove('deactive');
+        }, 1000);
+      }
+    });
+  </script>
+</body>
+</html>
